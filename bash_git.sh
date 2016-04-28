@@ -8,10 +8,10 @@ git_status() {
   git status --porcelain 2> /dev/null | wc -l | grep -v 0 | awk '{print "["$1"]"}'
 }
 git_unstaged() {
-  git status --porcelain 2> /dev/null | grep '^ [M|D]\|^??' | wc -l | grep -v 0 | awk '{print "["$1"]"}'
+  git status --porcelain 2> /dev/null | grep '^ [M|D]\|^??\|MM' | wc -l | grep -v 0 | awk '{print "["$1"]"}'
 }
 git_staged() {
-  git status --porcelain 2> /dev/null | grep -v '^ [M|D]\|^??' | wc -l | grep -v 0 | awk '{print "["$1"]"}'
+  git status --porcelain 2> /dev/null | grep -v '^ [M|D]\|^??\|MM' | wc -l | grep -v 0 | awk '{print "["$1"]"}'
 }
 current_username() {
   echo "$USER"@ | grep -v smcintyre@
