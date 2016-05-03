@@ -16,4 +16,4 @@ git_staged() {
 current_username() {
   echo "$USER"@ | grep -v smcintyre@
 }
-PS1="\$(current_username)\h:\w\[\033[33m\]\$(parse_git_branch) \[\033[31m\]\$(git_unstaged)\[\033[32m\]\$(git_staged)\[\033[00m\]\n$ "
+PS1="\[\033[37m\]\$(current_username)\h \[\033[36m\][\W]\[\033[33m\]\$(parse_git_branch) \[\033[31m\]\$(git_unstaged)\[\033[32m\]\$(git_staged)\[\033[00m\]\n$ "
